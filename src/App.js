@@ -1,4 +1,5 @@
 import React from 'react'
+import AppForm from './AppForm'
 class App extends React.Component {
   constructor(props) {
       super(props);
@@ -21,10 +22,10 @@ class App extends React.Component {
     {
       return(
         <div>
-        
+        <AppForm></AppForm>
             {this.state.isLoading ? <label>Loading...</label>:<label>Loaded {this.state.employees.length} elements: </label>}
             <p>
-              {this.state.employees.map((emp) => <ul key={emp.id} style={emp.active ? {color: "blue"}: {color: "red"}}>{ emp.name} {emp.age} </ul>)}
+              {this.state.employees.map((emp) => <ul key={emp.id} style={emp.isActive ? {color: "blue"}: {color: "red"}}>{ emp.name} {emp.age} </ul>)}
             </p>
             
             
